@@ -1,7 +1,13 @@
 #include "iostream"
 #include "stdio.h"
 #include "menu.cpp"
+#include <list>
+#include <string>
+
 using namespace std;
+
+
+
 int main(int argc, char const *argv[]) {
   int inp = 0;
   do {
