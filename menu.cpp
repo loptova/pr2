@@ -4,11 +4,11 @@ using namespace std;
 
 
 void mainMenuPrint(){
-  cout<<"Просмотреть таблицу"<<endl;
-  cout<<"Добавить практику"<<endl;
-  cout<<"Удалить практику"<<endl;
-  cout<<"Редактировать практику"<<endl;
-  cout<<"Выход"<<endl;
+  cout<<"1-Просмотреть таблицу"<<endl;
+  cout<<"2-Добавить практику"<<endl;
+  cout<<"3-Удалить практику"<<endl;
+  cout<<"4-Редактировать практику"<<endl;
+  cout<<"5-Выход"<<endl;
 }
 
 
