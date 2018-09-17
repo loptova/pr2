@@ -1,6 +1,8 @@
 #include "iostream"
 
 using namespace std;
+
+
 void mainMenuPrint(){
   cout<<"Просмотреть таблицу"<<endl;
   cout<<"Добавить практику"<<endl;
@@ -8,6 +10,23 @@ void mainMenuPrint(){
   cout<<"Редактировать практику"<<endl;
   cout<<"Выход"<<endl;
 }
+
+
 void printTable(){
-  //todo:print table
+  //TODO:print table
+}
+
+
+void addPracticeMenu(){
+  //TODO: add practice menu
+}
+
+
+void rmPracticeFooterMenu(){
+  //TODO: remove practice footer menu
+}
+
+
+void editPracticeFooterMenu(){
+  //TODO: edit practice footer menu
 }
