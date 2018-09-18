@@ -1,6 +1,6 @@
 #include "iostream"
 #include "stdio.h"
-#include "menu.cpp"
+#include "menu.h"
 #include "scripts.h"
 #include <list>
 #include <string>
