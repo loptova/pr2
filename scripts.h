@@ -1,13 +1,13 @@
 #include "iostream"
 #include <list>
 #include <string>
-#include "p_r.class.cpp"
+#include "Practice.h"
 #include <fstream>
 
 using namespace std;
 
-class Scripts{
-  public:
+
+
     string path = "file.txt";
     ofstream fout;
     void saveListToFile(){
@@ -35,4 +35,3 @@ class Scripts{
       //rmId - id of practice
 
     }
-};

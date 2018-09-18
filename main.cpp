@@ -1,10 +1,10 @@
 #include "iostream"
 #include "stdio.h"
 #include "menu.cpp"
-#include "scripts.cpp"
+#include "scripts.h"
 #include <list>
 #include <string>
-#include "p_r.class.cpp"
+#include "Practice.h"
 #include <fstream>
 
 using namespace std;
@@ -14,6 +14,8 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   int inp = 0;
   list <Practice> prList;
+  prList[0]->setPracticeId(1);
+  cout<< ">>>>>> "<<prList->getPracticeId()<<" <<<<<"
   do {
     system("clear");
     mainMenuPrint();

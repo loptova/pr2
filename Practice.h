@@ -1,4 +1,6 @@
-#include <string>
+//#include <string>
+#ifndef UPDATE_H
+#define UPDATE_H
 
 class Practice{
   private:
@@ -11,15 +13,7 @@ class Practice{
     string studentMark;
   public:
     //constructor
-    Practice(int practiceId, string practiceName, string studentFullName, string practiceVar, int practiceLevel, string releaseDate, string studentMark){
-      this->practiceId = practiceId;
-      this->practiceName = practiceName;
-      this->studentFullName = studentFullName;
-      this->practiceVar = practiceVar;
-      this->practiceLevel = practiceLevel;
-      this->releaseDate = releaseDate;
-      this->studentMark = studentMark;
-    }
+
     //getters
     int getPracticeId(){
       return this->practiceId;
@@ -65,3 +59,5 @@ class Practice{
       this->studentMark = newStudentMark;
     }
 };
+
+#endif
