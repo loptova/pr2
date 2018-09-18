@@ -1,10 +1,10 @@
 #include "iostream"
 #include "stdio.h"
-#include "menu.cpp"
-#include "scripts.cpp"
+#include "menu.h"
+#include "scripts.h"
 #include <list>
 #include <string>
-#include "p_r.class.cpp"
+#include "Practice.class.h"
 #include <fstream>
 
 using namespace std;
