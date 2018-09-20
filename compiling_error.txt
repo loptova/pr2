@@ -1,0 +1,8 @@
+/media/qqp/Files/c++/anya/pr2/main.cpp: In function ‘void fillTestData(pracList)’:
+/media/qqp/Files/c++/anya/pr2/main.cpp:77:11: error: ‘prList’ was not declared in this scope
+   prac_in(prList, 1, "first", "first", "first", 1, "first", "first");
+           ^~~~~~
+/media/qqp/Files/c++/anya/pr2/main.cpp:77:11: note: suggested alternative: ‘pracList’
+   prac_in(prList, 1, "first", "first", "first", 1, "first", "first");
+           ^~~~~~
+           pracList

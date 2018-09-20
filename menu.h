@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 
+
 using namespace std;
 
 
@@ -16,9 +17,15 @@ void mainMenuPrint(){
 }
 
 
-void printTable(){
+list<string> enterPracticeInfo(){
   //TODO:print table
-
+  list<string> pracInfo;
+  system("clear");
+  cout<<"Введите номер практики: ";int id;cin>>id;
+  cout<<"Введите название практики: ";string name;cin>>name;
+  int a;
+  cin >> a;
+  return pracInfo;
 }
 
 
