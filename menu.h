@@ -1,7 +1,7 @@
 #include "iostream"
 #include <list>
 #include <string>
-
+#include <vector>
 
 using namespace std;
 
@@ -17,20 +17,21 @@ void mainMenuPrint(){
 }
 
 
-string[6] enterPracticeInfo(){
+vector<string> enterPracticeInfo(){
   //TODO:print table
-  string pracInfo[6];
+  vector<string> info(7);
+  //info.reserve(7);
   //system("clear");
-  cout<<"Введите номер практики: ";int id;cin>>pracInfo[0];
-  cout<<"Введите название практики: ";string name;cin>>pracInfo[1];
-  cout<<"Введите ФИО студента: ";string name;cin>>pracInfo[2];
-  cout<<"Введите номер варианта: ";string name;cin>>pracInfo[3];
-  cout<<"Введите номер уровня: ";string name;cin>>pracInfo[4];
-  cout<<"Введите дату сдачи: ";string name;cin>>pracInfo[5];
-  cout<<"Введите оценку студента: ";string name;cin>>pracInfo[6];
-  int a;
-  cin >> a;
-  return pracInfo;
+  cout<<"Введите номер практики: ";cin>>info[0];
+  cout<<"Введите название практики: ";cin>>info[1];
+  cout<<"Введите ФИО студента: ";cin>>info[2];
+  cout<<"Введите номер варианта: ";cin>>info[3];
+  cout<<"Введите номер уровня: ";cin>>info[4];
+  cout<<"Введите дату сдачи: ";cin>>info[5];
+  cout<<"Введите оценку студента: ";cin>>info[6];
+  //int a;
+  //cin >> a;
+  return info;
 }
 
 
@@ -40,9 +41,11 @@ void addPracticeMenu(){
 }
 
 
-void rmPracticeFooterMenu(){
+string rmPracticeFooterMenu(){
   //TODO: remove practice footer menu
-
+  string _id;
+  cout<<"Введите номер записи: ";cin>>_id;
+  return _id;
 }
 
 

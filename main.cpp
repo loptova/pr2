@@ -2,22 +2,23 @@
 #include "stdio.h"
 #include "menu.h"
 #include "scripts.h"
+#include <stdlib.h>
 #include <list>
 #include <string>
-#include "Practice.h"
 #include <fstream>
 #include <cstring>
+#include <vector>
 
 using namespace std;
 
 // Practice prList[255];
 int a;
 struct prac{
-  int practiceId;
+  string practiceId;
   string practiceName;
   string studentFullName;
   string practiceVar;
-  int practiceLevel;
+  string practiceLevel;
   string releaseDate;
   string studentMark;
   prac* next;
@@ -35,14 +36,33 @@ void constr_list(pracList &l){
 bool chk_empty(pracList l){
   return (l.head == NULL);
 }
+
+void prac_rm(pracList &l, string id){
+    prac* h = l.head;
+    prac* t;
+    t = h;
+
+    if (l.head->practiceId == id){
+      cout<<"EQUALS AT HEAD"<<endl;
+      l.head = l.head -> next;
+    }
+
+    while(t != NULL){
+      if (t->practiceId == id){
+
+      }
+      t = t->next;
+    }
+}
+
 // добавление элемента списка
 void prac_in(
   pracList &l,
-  int practiceId,
+  string practiceId,
   string practiceName,
   string studentFullName,
   string practiceVar,
-  int practiceLevel,
+  string practiceLevel,
   string releaseDate,
   string studentMark
 ){
@@ -74,17 +94,17 @@ void prac_in(
   }
 }
 void fillTestData(pracList &s){
-  prac_in(s, 1, "first", "first", "first", 1, "first", "first");
-  prac_in(s, 2, "second", "second", "second", 2, "second", "second");
-  prac_in(s, 3, "third", "third", "third", 3, "third", "third");
-  prac_in(s, 4, "4th", "4th", "4th", 4, "4th", "4th");
+  prac_in(s, "1", "first", "first", "first", "1", "first", "first");
+  prac_in(s, "2", "second", "second", "second", "2", "second", "second");
+  prac_in(s, "3", "third", "third", "third", "3", "third", "third");
+  prac_in(s, "4", "4th", "4th", "4th", "4", "4th", "4th");
 }
 
 
 
 void printTable(pracList &s){
   //TODO:выгрузка в список перед принтом
-  system("clear");
+  //ystem("clear");
   prac* h = s.head;
   prac* t;// = prList.tail;
   // cout<<chk_empty(prList)<<endl;
@@ -105,10 +125,10 @@ void printTable(pracList &s){
       cout << endl;
       t = t->next;
   }
-  cout<<endl;
-  cout<<"1-Назад"<<endl;
-  cout<<"> ";
-  cin>>a;
+  //cout<<endl;
+  //cout<<"1-Назад"<<endl;
+  //cout<<"> ";
+  //cin>>a;
 }
 
 
@@ -122,7 +142,7 @@ int main(int argc, char const *argv[]) {
   fillTestData(prList);
 
   do {
-    system("clear");
+    // system("clear");
 
     //fillTestData(prList);
     /*prac_in(prList, 1, "first", "first", "first", 1, "first", "first");
@@ -136,36 +156,35 @@ int main(int argc, char const *argv[]) {
     //cout<<endl;
     cout<<"> ";
     cin>>inp;
-    switch (inp) {
-      case 1:{
+
+      if(inp == 1){
         printTable(prList);
-        break;
-      }
-      case 2:{
-        string info[6] = enterPracticeInfo();
+      }else if(inp == 2){
+        vector<string> info(enterPracticeInfo());
         for(int i = 0; i<=6; i++){
-          cout<<info[i];
+          cout<<info[i]<<endl;
         }
-        cin>>inp;
-        break;
-      }
-      case 3:{
+        //int info0 = atoi(info[0].c_str());
+        //int info3 = atoi(info[3].c_str());
+        prac_in(prList, info[0], info[1], info[2], info[3], info[4], info[5], info[6]);
+        cout<< endl;
+      }else if(inp == 3){
+        printTable(prList);
+        prac_rm(prList, rmPracticeFooterMenu());
 
-        break;
-      }
-      case 4:{
+      }else if(inp == 4){
 
-        break;
-      }
-      case 5:{
+      }else if(inp == 5){
         saveListToFile();
-        break;
-      }
-      case 6:{
+      }else if(inp == 6){
         loadDataFromFile();
-        break;
+      }else{
+        //inp = 0;
       }
-    }
+
+        //cin>>inp;
+
+
   } while(inp != 7);
 
 
