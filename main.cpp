@@ -131,8 +131,7 @@ int main(int argc, char const *argv[]) {
     prac_in(prList, 4, "4th", "4th", "4th", 4, "4th", "4th");*/
 
 
-    // cout<<
-
+    // cout
     mainMenuPrint();
     //cout<<endl;
     cout<<"> ";
@@ -143,7 +142,11 @@ int main(int argc, char const *argv[]) {
         break;
       }
       case 2:{
-        enterPracticeInfo();
+        string info[6] = enterPracticeInfo();
+        for(int i = 0; i<=6; i++){
+          cout<<info[i];
+        }
+        cin>>inp;
         break;
       }
       case 3:{

@@ -17,12 +17,17 @@ void mainMenuPrint(){
 }
 
 
-list<string> enterPracticeInfo(){
+string[6] enterPracticeInfo(){
   //TODO:print table
-  list<string> pracInfo;
-  system("clear");
-  cout<<"Введите номер практики: ";int id;cin>>id;
-  cout<<"Введите название практики: ";string name;cin>>name;
+  string pracInfo[6];
+  //system("clear");
+  cout<<"Введите номер практики: ";int id;cin>>pracInfo[0];
+  cout<<"Введите название практики: ";string name;cin>>pracInfo[1];
+  cout<<"Введите ФИО студента: ";string name;cin>>pracInfo[2];
+  cout<<"Введите номер варианта: ";string name;cin>>pracInfo[3];
+  cout<<"Введите номер уровня: ";string name;cin>>pracInfo[4];
+  cout<<"Введите дату сдачи: ";string name;cin>>pracInfo[5];
+  cout<<"Введите оценку студента: ";string name;cin>>pracInfo[6];
   int a;
   cin >> a;
   return pracInfo;
