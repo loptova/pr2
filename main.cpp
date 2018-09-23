@@ -28,6 +28,7 @@ struct pracList{
   prac* head;
   prac* tail;
 };
+pracList prList;
 // конструктор пустого списка
 void constr_list(pracList &l){
   l.head = NULL;
@@ -47,12 +48,9 @@ void prac_rm(pracList &l, string id){
       l.head = l.head -> next;
     }
 
-    while(t != NULL){
-      if (t->practiceId == id){
-
-      }
+    while(t->next->practiceId != id)
       t = t->next;
-    }
+    t->next = t->next->next;
 }
 
 // добавление элемента списка
@@ -93,12 +91,80 @@ void prac_in(
     l.tail = l.tail->next;
   }
 }
+
+void saveListToFile(pracList &l){
+    ofstream out;
+    out.open("data.txt");
+    prac* h = l.head;
+    prac* t;// = prList.tail;
+    // cout<<chk_empty(prList)<<endl;
+    vector<string> info(7);
+    t = h;
+    while (t != NULL){
+      info[0] = t->practiceId;
+      info[1] = t->practiceName;
+      info[2] = t->studentFullName;
+      info[3] = t->practiceVar;
+      info[4] = t->practiceLevel;
+      info[5] = t->releaseDate;
+      info[6] = t->studentMark;
+      for (int i=0; i<=6; i++){
+        out << info[i] << endl;
+      }
+      out << ";"<<endl;
+      //out << t <<endl;
+      t = t->next;
+    }
+}
+void clearList(pracList &l){
+  while(l.head != NULL){
+    l.head = l.head->next;
+  }
+}
+void loadListFromFile(pracList &l){
+  /*string line;
+  ifstream in("data.txt");
+  prac* el;
+  while(getline(in, line)){
+    el = line;
+    cout<<el->practiceId;
+  }in.close();*/
+
+  clearList(prList);
+  string line, _line;
+  ifstream in("data.txt");
+  vector<string> info(7);
+
+  int i = 0;
+
+  while (getline(in, _line)){
+    if (_line == ";"){
+        i = 0;
+        prac_in(prList, info[0], info[1], info[2], info[3], info[4], info[5], info[6]);
+        // cout<<info[0]<<endl;
+    }else{
+      info[i] = _line;
+      // cout<<info[i]<<endl;
+      // line += _line;
+      i++;
+    }
+    // prac_in(l, info[0], info[1], info[2], info[3], info[4], info[5], info[6]);
+  }
+  // system("clear");
+  // cout<< line;
+  // cin >> a;
+}
+
+
+
 void fillTestData(pracList &s){
   prac_in(s, "1", "first", "first", "first", "1", "first", "first");
   prac_in(s, "2", "second", "second", "second", "2", "second", "second");
   prac_in(s, "3", "third", "third", "third", "3", "third", "third");
   prac_in(s, "4", "4th", "4th", "4th", "4", "4th", "4th");
 }
+
+
 
 
 
@@ -137,9 +203,9 @@ int main(int argc, char const *argv[]) {
   //Practice practice;
   //practice.setPracticeId(1);
   //prList[0] = practice
-  pracList prList;
+
   constr_list(prList);
-  fillTestData(prList);
+  //fillTestData(prList);
 
   do {
     // system("clear");
@@ -171,21 +237,24 @@ int main(int argc, char const *argv[]) {
       }else if(inp == 3){
         printTable(prList);
         prac_rm(prList, rmPracticeFooterMenu());
-
       }else if(inp == 4){
 
       }else if(inp == 5){
-        saveListToFile();
+        saveListToFile(prList);
       }else if(inp == 6){
-        loadDataFromFile();
-      }else{
+        loadListFromFile(prList);
+      }else if(inp == 7){
         //inp = 0;
+        clearList(prList);
+        //cin.get;
+      }else{
+
       }
 
         //cin>>inp;
 
 
-  } while(inp != 7);
+  } while(inp != 8);
 
 
   return 0;

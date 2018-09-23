@@ -8,11 +8,22 @@ using namespace std;
 
 
 
-    string path = "file.txt";
-    ofstream fout;
+    bool isNumeral(string str){
+      for (int i = 0; i <= str.length(); i++){
+
+      }
+    }
+
+    vector<string> getRusLetters(){
+      //char********************************************** abc[10];
+      //return abc;
+      vector<string> rusLetters(33);
+      //rusLetters[0] = "a";
+    }
+
     void saveListToFile(){
       //TODO: saving list of practice to the file
-      fout.open(path, ofstream::app);
+      // /fout.open(path, ofstream::app);
     }
 
 

@@ -13,9 +13,18 @@ void mainMenuPrint(){
   cout<<"4-Редактировать практику"<<endl;
   cout<<"5-Сохранить таблицу"<<endl;
   cout<<"6-Загрузить таблицу"<<endl;
-  cout<<"7-Выход"<<endl;
+  cout<<"7-Очистить список"<<endl;
+  cout<<"8-Выход"<<endl;
 }
-
+/*
+string practiceId,
+string practiceName,
+string studentFullName,
+string practiceVar,
+string practiceLevel,
+string releaseDate,
+string studentMark
+*/
 
 vector<string> enterPracticeInfo(){
   //TODO:print table
@@ -51,7 +60,7 @@ string rmPracticeFooterMenu(){
 
 void editPracticeFooterMenu(){
   //TODO: edit practice footer menu
-
+  
 }
 
 
