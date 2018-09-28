@@ -60,7 +60,7 @@ string rmPracticeFooterMenu(){
 
 void editPracticeFooterMenu(){
   //TODO: edit practice footer menu
-  
+
 }
 
 

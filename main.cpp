@@ -206,7 +206,10 @@ int main(int argc, char const *argv[]) {
 
   constr_list(prList);
   //fillTestData(prList);
-
+  //string streng = string(54):
+  //char str1[] = "1234";
+  //int digit = (int)str1[0];
+  //cout<<str1;
   do {
     // system("clear");
 

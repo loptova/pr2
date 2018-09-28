@@ -17,7 +17,7 @@ using namespace std;
     vector<string> getRusLetters(){
       //char********************************************** abc[10];
       //return abc;
-      vector<string> rusLetters(33);
+      //vector<string> rusLetters(33);
       //rusLetters[0] = "a";
     }
 
